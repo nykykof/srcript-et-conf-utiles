@@ -1,0 +1,21 @@
+#
+# run the following command
+#
+
+systemctl edit docker 
+
+#
+# add those lines in the file
+#
+
+[Service]
+Environment="HTTP_PROXY=http://monproxy:monport/"
+
+#
+# run this command to restart docker
+#
+
+sudo systemctl restart docker 
+
+# that's it
+
