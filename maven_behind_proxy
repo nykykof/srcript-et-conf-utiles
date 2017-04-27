@@ -1,0 +1,30 @@
+# install maven
+sudo apt-get install maven
+
+#create $JAVA_HOME
+echo "export JAVA_HOME=/path/to/the/jdk" >> ~/.bashrc
+
+#test maven version and check if no warning
+mvn -v
+
+#set a proxy information if there is one
+#create the ~/.m2 if not exist
+mkdir ~/.m2
+
+#copy and paste those lines in the ~/.m2 file
+
+<settings>
+	<proxies>
+		<proxy>
+			<id>omyId (something not so important)</id>
+			<active>true</active>
+			<protocol>http</protocol>
+			<host>myproxy.com</host>
+			<port>port</port>
+			<username>user (leave blink if anonymous proxy)</username>
+			<password>password (leave blink if anonymous proxy)</password>
+		</proxy>
+	</proxies>
+</settings>
+
+#that's it :)
